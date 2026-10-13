@@ -1,0 +1,19 @@
+
+# .NET build files
+**/bin/
+**/obj/
+
+# React frontend
+**/node_modules/
+**/dist/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Log files
+*.log
+# Local development configuration
+**/appsettings.Development.json
+**/*.csproj.user

@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ERP.APPLICATIONBUSINESS\ERP.APPLICATIONBUSINESS.csproj" />
+    <ProjectReference Include="..\ERP.DOMAINMODELS\ERP.DOMAINMODELS.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="StoredProcedures\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    <PackageReference Include="AutoMapper" Version="16.2.0" />
+    
+    <PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
+    
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.25">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Stripe.net" Version="52.4.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.1" />
+  </ItemGroup>
+
+</Project>
