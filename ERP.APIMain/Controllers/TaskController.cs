@@ -34,11 +34,32 @@ namespace ERP.APIMain.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTask([FromBody] ProjectTask task)
+        public async Task<IActionResult> AddTask(
+     [FromBody] ProjectTask task)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var result = await _taskService.AddTaskAsync(task);
-            if (!result) return BadRequest("Failed to add task");
-            return Ok("Task added successfully");
+
+            if (result == null)
+            {
+                return BadRequest(new
+                {
+                    message = "Failed to add task."
+                });
+            }
+
+            return Ok(new
+            {
+                message = "Task added successfully.",
+                taskId = result.Id,
+                taskCode = result.TaskCode,
+                title = result.Title,
+                assignedToEmployeeId = result.AssignedToEmployeeId
+            });
         }
 
         [HttpPut("{id}")]

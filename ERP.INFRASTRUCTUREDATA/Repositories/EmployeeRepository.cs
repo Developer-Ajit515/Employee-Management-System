@@ -38,6 +38,14 @@ namespace ERP.INFRASTRUCTUREDATA.Repositories
                 .FirstOrDefaultAsync(e => e.EmployeeId == id);
         }
 
+        public async Task<int?> GetUserIdByEmployeeIdAsync(int employeeId)
+        {
+            return await _context.Employees
+                .Where(e => e.EmployeeId == employeeId && e.Status)
+                .Select(e => e.UserId)
+                .FirstOrDefaultAsync();
+        }
+
         // ADD
         public async Task<Employee> AddAsync(Employee employee)
         {
@@ -87,5 +95,7 @@ namespace ERP.INFRASTRUCTUREDATA.Repositories
 
             return true;
         }
+
+       
     }
 }

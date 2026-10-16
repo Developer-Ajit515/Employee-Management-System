@@ -14,7 +14,7 @@ namespace ERP.APPLICATIONBUSINESS.Interfaces.IRepository
 
         Task<ProjectTask?> GetByIdAsync(int id);
 
-        Task<bool> AddTaskAsync(ProjectTask task);
+        Task<ProjectTask?> AddTaskAsync(ProjectTask task);
 
         Task<bool> UpdateTaskAsync(ProjectTask task);
 

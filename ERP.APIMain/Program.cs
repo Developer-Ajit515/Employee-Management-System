@@ -1,7 +1,7 @@
- using ERP.APIMain.Authorization;
+using ERP.APIMain.Authorization;
 using ERP.APIMain.Middlewares;
-
 using ERP.APPLICATIONBUSINESS.Interfaces;
+using ERP.APPLICATIONBUSINESS.Interfaces.IRepositories;
 using ERP.APPLICATIONBUSINESS.Interfaces.IRepository;
 using ERP.APPLICATIONBUSINESS.Interfaces.IServices;
 using ERP.APPLICATIONBUSINESS.Security;
@@ -21,7 +21,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using System.Text.Json.Serialization;
-using ERP.APPLICATIONBUSINESS.Settings;
+
 
 
 var builder = WebApplication.CreateBuilder(args);

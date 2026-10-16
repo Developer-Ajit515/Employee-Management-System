@@ -250,6 +250,12 @@ namespace ERP.INFRASTRUCTUREDATA.Data
                 .HasForeignKey(e => e.DepartmentId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Employee>()
+                .HasOne(e => e.User)
+                .WithMany()
+                .HasForeignKey(e => e.UserId)
+                .OnDelete(DeleteBehavior.Restrict);
+
 
             // =====================================================
             // Leave

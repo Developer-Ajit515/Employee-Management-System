@@ -13,6 +13,8 @@ namespace ERP.APPLICATIONBUSINESS.Interfaces.IRepository
 
         Task<Employee?> GetByIdAsync(int id);
 
+        Task<int?> GetUserIdByEmployeeIdAsync(int employeeId);
+
         Task<Employee> AddAsync(Employee employee);
 
         Task<bool> UpdateAsync(Employee employee);

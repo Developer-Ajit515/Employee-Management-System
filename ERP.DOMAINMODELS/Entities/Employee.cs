@@ -24,6 +24,10 @@ namespace ERP.DOMAINMODELS.Entities
 
         public decimal Salary { get; set; }
 
+        public int? UserId { get; set; }
+
+        public User? User { get; set; }
+
         public DateTime JoiningDate { get; set; }
 
         public bool Status { get; set; } = true;

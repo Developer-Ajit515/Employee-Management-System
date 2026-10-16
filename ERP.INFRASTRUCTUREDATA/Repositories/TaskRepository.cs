@@ -31,29 +31,14 @@ namespace ERP.INFRASTRUCTUREDATA.Repositories
         }
 
         // Add a new task
-        public async Task<bool> AddTaskAsync(ProjectTask task)
+
+        public async Task<ProjectTask?> AddTaskAsync(ProjectTask task)
         {
-            try
-            {
-                await _context.ProjectTasks.AddAsync(task);
+            _context.ProjectTasks.Add(task);
 
-                var result = await _context.SaveChangesAsync();
+            var result = await _context.SaveChangesAsync();
 
-                return result > 0;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("TASK SAVE ERROR:");
-                Console.WriteLine(ex.Message);
-
-                if (ex.InnerException != null)
-                {
-                    Console.WriteLine("INNER ERROR:");
-                    Console.WriteLine(ex.InnerException.Message);
-                }
-
-                throw;
-            }
+            return result > 0 ? task : null;
         }
 
         // Update existing task
@@ -74,5 +59,7 @@ namespace ERP.INFRASTRUCTUREDATA.Repositories
             var result = await _context.SaveChangesAsync();
             return result > 0;
         }
+
+       
     }
 }
